@@ -2,5 +2,5 @@
 
 
 <?php foreach ($news as $key => $value):  ?>
-	<h2> <?php echo $value['title']; ?></h2>
+	<p> <a href="view/<?php echo $value['slug'];?>"><?php echo $value['title']; ?></a></p>
 <?php endforeach ?>
