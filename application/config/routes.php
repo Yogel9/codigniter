@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['news'] = 'news';
+$route['news/(:any)']='news/view/$1';//после news любое имя 
