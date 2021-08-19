@@ -13,9 +13,15 @@ class News_model extends CI_Model{//название файла и класса 
 		$query = $this->db->get_where('news',array('slug'=>$slug));
 		return $query->row_array();
 	}
-} 
 
+	public function setNews($slug,$title,$text){
+		$data = array(
+			'title' => $title,
+			'slug'  => $slug,
+			'text'  =>$text
+		);
 
+		return $this->db->insert('news',$data);
+	}
 
-
- ?>
+}?>

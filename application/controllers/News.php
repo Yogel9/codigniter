@@ -31,4 +31,25 @@ class News extends CI_Controller{
 		$this->load->view('news/view',$data);
 		$this->load->view('templates/footer');
 	}
+
+	public function create(){
+		$data['title']= "Добавить новость";
+
+		if($this->input->post('slug') && $this->input->post('title') && $this->input->post('text')){
+		//потом нужны проверки на вводимые символы
+			$slug  =$this->input->post('slug');
+			$title =$this->input->post('title');
+			$text  =$this->input->post('text');
+
+			if($this->News_model->setNews($slug,$title,$text)){
+				$this->load->view('templates/header',$data);
+				$this->load->view('news/success',$data);
+				$this->load->view('templates/footer');
+			}
+		}else{
+		$this->load->view('templates/header',$data);
+		$this->load->view('news/create',$data);
+		$this->load->view('templates/footer');
+			 }
+	}
 }
