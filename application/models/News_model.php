@@ -21,7 +21,17 @@ class News_model extends CI_Model{//название файла и класса 
 			'text'  =>$text
 		);
 
-		return $this->db->insert('news',$data);
+		return $this->db->insert('news',$data);//добавление
 	}
 
+	public function updateNews($slug,$title,$text){
+
+		$data = array(
+			'title' => $title,
+			'slug'  => $slug,
+			'text'  =>$text
+		);
+
+		return $this->db->update('news',$data,array('slug' => $slug));//обновление данных
+	}
 }?>
