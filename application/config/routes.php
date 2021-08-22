@@ -56,4 +56,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['news'] = 'news';
 $route['news/create']='news/create';
 $route['news/edit']='news/edit';
+$route['news/delete']='news/delete';
 $route['news/(:any)']='news/view/$1';//после news любое имя 

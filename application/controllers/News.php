@@ -79,4 +79,21 @@ class News extends CI_Controller{
 		$this->load->view('news/edit',$data);
 		$this->load->view('templates/footer');
 	}
+
+	public function delete($slug = NULL){
+		$data['news'] = $this->News_model->getNews($slug);
+
+		if (empty($data['news'])) {
+			show_404();
+		}
+		$data['title']="Удаление";
+		$data['result']="Ошибка удаления".$data['news']['title'];
+
+		if($this->News_model->deleteNews($slug)){
+			$data['result']=$data['news']['title']." успешно удалена";
+		}
+		$this->load->view('templates/header',$data);
+		$this->load->view('news/delete',$data);
+		$this->load->view('templates/footer');
+	}
 }
