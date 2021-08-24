@@ -41,9 +41,9 @@
             <div class="panel-heading"><div class="sidebar-header">Новости</div></div>
             <div class="panel-body">
               
-              <p>31.02.2017</p>
-              <p>Мы запустили новый сервис</p>
-              
+              <?php foreach($news as $value): ?>
+              <p><a href="/news/view/<?php echo $value['slug']; ?>"><?php echo $value['title']; ?></a></p>
+              <?php endforeach ?>
             </div>
           </div>
 

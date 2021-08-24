@@ -3,7 +3,7 @@
 </html>-->
 <!-- Footer start -->  
         </div>
-        <?php $this->load->view('templates/menu'); ?>
+        <?php $this->load->view('templates/menu',$news); ?>
 
         </div>
 

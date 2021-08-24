@@ -1,6 +1,6 @@
 <h1> Все новости </h1>
-<h2><a href="/news/create">Добавить новость</a>
-</h2>
+<h5><a href="/news/create">Добавить новость</a>
+</h5>
 
 <?php foreach ($news as $key => $value):  ?>
 <p> 
